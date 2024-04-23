@@ -19,7 +19,7 @@ const socials = [
   },
   {
     id: 3,
-    href: "mailto:mbf@gmail.com",
+    href: "mailto:mbfgbemidele5862@gmail.com",
     img: Gmail,
     name: Gmail
   },
