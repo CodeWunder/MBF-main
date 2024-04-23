@@ -13,7 +13,7 @@ const socials = [
   },
   {
     id: 2,
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/mbfnation?igsh=YzljYTk1ODg3Zg==",
     img: Instagram,
     name: Instagram
   },
