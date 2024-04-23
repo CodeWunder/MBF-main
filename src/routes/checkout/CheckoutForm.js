@@ -17,8 +17,13 @@ const CheckoutForm = ({ totalPayment, productsQuantity }) => {
   const sendTransactionDetails = () => {
     const deliveryType = deliveryOption === "express" ? "Express" : "Normal";
     const location = locationType === "island" ? "Island" : "Mainland";
-    const message = `Hello MBF Enterprise, my name is ${name}. I want to order using ${deliveryType} delivery on ${location} to ${address} and this is my phone number: ${phoneNumber}`;
+    const message = `Hello MBF Enterprise, my name is ${name}. I want to order using ${deliveryType} delivery on ${location} to ${address} and this is my phone number: ${phoneNumber}
 
+    These are the product details:
+    Delivery Fee: ₦${parseFloat(deliveryFee).toFixed(2)}
+    Product Price: ₦${parseFloat(totalPayment).toFixed(2)}
+    Total Amount: ₦${totalAmount.toFixed(2)}`;
+    
 
     // Create the WhatsApp message link
     const whatsappLink = `https://wa.me/2348122390396?text=${encodeURIComponent(
