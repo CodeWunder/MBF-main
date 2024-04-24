@@ -26,7 +26,7 @@ const CheckoutForm = ({ totalPayment, productsQuantity }) => {
     
 
     // Create the WhatsApp message link
-    const whatsappLink = `https://wa.me/2348122390396?text=${encodeURIComponent(
+    const whatsappLink = `https://wa.me/2347067903294?text=${encodeURIComponent(
       message
     )}`;
 
