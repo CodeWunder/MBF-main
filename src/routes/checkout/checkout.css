@@ -393,7 +393,7 @@ input[type="password"] {
   text-align: center;
   position: relative;
   margin: 0 auto;
-  width: 100vw; /* Default to full width */
+  width: 80vw; /* Default to full width */
 }
 
 /* Media query for screens wider than 768px */
