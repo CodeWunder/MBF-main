@@ -260,9 +260,10 @@ input[type="password"] {
 /* CART TOTALS */
 
 .checkout-carttotals {
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .checkout-carttotals .cart-carttotals .totals-content {
@@ -439,7 +440,7 @@ input[type="password"] {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #ee0979;
+  border: 1px solid var(--yellow);
   outline-width: 0;
   transition: All 0.5s ease-in;
   -webkit-transition: All 0.5s ease-in;
@@ -450,7 +451,7 @@ input[type="password"] {
 /*buttons*/
 #msform .action-button {
   width: fit-content;
-  background: #ee0979;
+  background: var(--yellow);
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -462,7 +463,7 @@ input[type="password"] {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px var(--yellow);;
 }
 
 #msform .action-button-previous {
@@ -563,7 +564,7 @@ input[type="password"] {
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #ee0979;
+  background: var(--yellow);
   color: white;
 }
 
