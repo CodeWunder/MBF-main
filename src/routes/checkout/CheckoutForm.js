@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const CheckoutForm = ({ totalPayment, productsQuantity }) => {
+const CheckoutForm = ({ totalPayment, productsQuantity, cartItems }) => {
   const [deliveryOption, setDeliveryOption] = useState("normal");
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [locationType, setLocationType] = useState("");
   const [deliveryFee, setDeliveryFee] = useState(0);
-
   const [transactionSent, setTransactionSent] = useState(false);
 
   // Calculate total amount including delivery fee
@@ -17,13 +16,25 @@ const CheckoutForm = ({ totalPayment, productsQuantity }) => {
   const sendTransactionDetails = () => {
     const deliveryType = deliveryOption === "express" ? "Express" : "Normal";
     const location = locationType === "island" ? "Island" : "Mainland";
-    const message = `Hello MBF Enterprise, my name is ${name}. I want to order using ${deliveryType} delivery on ${location} to ${address} and this is my phone number: ${phoneNumber}
+
+    // Generating product details for each item in cart
+    const productDetails = cartItems.map((item) => {
+      const selectedAttributes = item.userSelectedAttributes
+        .map((attr) => attr.attributeValue)
+        .join(", ");
+      return `${item.ItemName} (${selectedAttributes}) - (${item.quantity} ${
+        item.quantity > 1 ? "items" : "item"
+      })`;
+    });
+
+    const message = `Hello MBF Enterprise, my name is ${name}. I want to order using ${deliveryType} delivery on ${location} to ${address} and this is my phone number: ${phoneNumber}.
 
     These are the product details:
-    Delivery Fee: ₦${parseFloat(deliveryFee).toFixed(2)}
+    Product Details:
+    ${productDetails.join("\n")}
     Product Price: ₦${parseFloat(totalPayment).toFixed(2)}
+    Delivery Fee: ₦${parseFloat(deliveryFee).toFixed(2)}
     Total Amount: ₦${totalAmount.toFixed(2)}`;
-    
 
     // Create the WhatsApp message link
     const whatsappLink = `https://wa.me/2347067903294?text=${encodeURIComponent(
@@ -35,6 +46,7 @@ const CheckoutForm = ({ totalPayment, productsQuantity }) => {
 
     setTransactionSent(true); // Optional: Set state to prevent duplicate messages
   };
+
   // Calculate delivery fee based on options
   useEffect(() => {
     let fee = 0;
