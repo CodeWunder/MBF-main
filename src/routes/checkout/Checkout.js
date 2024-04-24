@@ -1,15 +1,13 @@
 import React from "react";
 //components
-import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart.js";
+import MultiStepForm from "./MultiForm.js";
 
 const Checkout = ({
   cartItems,
   productsQuantity,
   totalPayment,
-  taxes,
   checkoutSummary,
-  currentUser,
 }) => {
   return (
     <main className="checkout">
@@ -19,13 +17,10 @@ const Checkout = ({
       ) : (
         <article className="checkout-content">
           <div className="checkout-form-container">{checkoutSummary}</div>
-          <CheckoutForm
-            className="checkout-carttotals"
+          <MultiStepForm
             cartItems={cartItems}
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
-            taxes={taxes}
-            currentUser={currentUser}
           />
         </article>
       )}
