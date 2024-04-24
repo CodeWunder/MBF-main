@@ -3,7 +3,6 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./routes/landing/Header.js";
 import Footer from "./components/footer/Footer";
 import { ToastContainer } from "react-toastify";
-import CheckoutForm from "./routes/checkout/CheckoutForm.js";
 import "react-toastify/dist/ReactToastify.css";
 import {
   About,
@@ -29,6 +28,7 @@ import Privacy from "./routes/privacy/Privacy.js";
 import Careers from "./routes/careers/Careers.js";
 import Profile from "./routes/profile/Profile.js";
 import ResetLocation from "./helpers/ResetLocation.js";
+import MultiStepForm from "./routes/checkout/MultiForm.js";
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -552,7 +552,7 @@ function App() {
         <Route
           path="/checkout"
           element={
-            <CheckoutForm
+            <MultiStepForm
               totalPayment={totalPayment}
               productsQuantity={productsQuantity}
             />
