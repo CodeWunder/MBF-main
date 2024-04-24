@@ -21,6 +21,7 @@ const Checkout = ({
           <div className="checkout-form-container">{checkoutSummary}</div>
           <CheckoutForm
             className="checkout-carttotals"
+            cartItems={cartItems}
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
