@@ -13,13 +13,13 @@ const socials = [
   },
   {
     id: 2,
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/mbfnation?igsh=YzljYTk1ODg3Zg==",
     img: Instagram,
     name: Instagram
   },
   {
     id: 3,
-    href: "mailto:mbf@gmail.com",
+    href: "mailto:mbfgbemidele5862@gmail.com",
     img: Gmail,
     name: Gmail
   },

@@ -11,7 +11,7 @@ const ContactUsLanding = () => {
         </div>
         <div>
           <h2>20, Dorcas Elesho street</h2>
-          <p>Behind EcoBank, Ikorudu, Lagos Nigeria</p>
+          <p>Behind EcoBank, Ikorodu, Lagos Nigeria</p>
         </div>
         <div>
           <h2>Open Monday-Friday</h2>
