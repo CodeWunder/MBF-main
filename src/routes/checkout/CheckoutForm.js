@@ -123,8 +123,14 @@ const CheckoutForm = ({ totalPayment, productsQuantity, cartItems }) => {
           type="tel"
           id="phone-number"
           value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          onChange={(e) => {
+            // Only allow numbers, no spaces or special characters
+            const formattedPhoneNumber = e.target.value.replace(/\D/g, "");
+            setPhoneNumber(formattedPhoneNumber);
+          }}
           className="input-field"
+          pattern="[0-9]*"  // Pattern to allow only numbers
+          title="Please enter only numbers"
         />
 
         <label htmlFor="address">Delivery Address:</label>
