@@ -9,6 +9,8 @@ import BellPepper from "../assets/images/BellPepper.jpeg";
 import BigCabbage from "../assets/images/big-cabbage.jpg";
 import BigYam from "../assets/images/big-yam.jpg";
 import SmallYam from "../assets/images/small-yam.jpg";
+import Carrot from "../assets/images/carrot.jpg";
+import GreenPepper from "../assets/images/green-pepper.jpg";
 
 export const allProductsData = [
   {
@@ -66,7 +68,7 @@ export const allProductsData = [
   },
   {
     id: "meat-pizza",
-    ItemImg: Tomatoes,
+    ItemImg: BellPepper,
     ItemName: "Green Bell Pepper",
     ItemIngredients:
       "Veggies used for the preparation of several meal and sauce.",
@@ -130,7 +132,7 @@ export const allProductsData = [
   },
   {
     id: "carrot",
-    ItemImg: Tomatoes,
+    ItemImg: Carrots,
     ItemName: "Carrots",
     ItemIngredients:
       "A crunchy, orange root vegetable with a sweet flavor. They can be eaten raw, roasted, boiled, or juiced. Carrots are a good source of Vitamin A.",
@@ -209,8 +211,8 @@ export const allProductsData = [
     ],
   },
   {
-    id: "rustica-pizza",
-    ItemImg: Tomatoes,
+    id: "Green Pepper",
+    ItemImg: GreenPepper,
     ItemName: "Green Pepper ",
     ItemIngredients:
       "Green peppers are unripe bell peppers and have a grassy flavor.",
