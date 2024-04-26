@@ -9,8 +9,8 @@ import BellPepper from "../assets/images/BellPepper.jpeg";
 import BigCabbage from "../assets/images/big-cabbage.jpg";
 import BigYam from "../assets/images/big-yam.jpg";
 import SmallYam from "../assets/images/small-yam.jpg";
-import Carrots from "../assets/images/carrot.jpg";
-import GreenPepper from "../assets/images/green-pepper.jpg";
+import Carrots from "../assets/images/product-images/carrot.jpg";
+import GreenPepper from "../assets/images/product-images/green-pepper.jpg";
 
 export const allProductsData = [
   {
