@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { PaystackButton } from "react-paystack";
 
 const CheckoutForm = ({ totalPayment, productsQuantity, cartItems }) => {
   const [deliveryOption, setDeliveryOption] = useState("normal");
@@ -61,6 +62,19 @@ const CheckoutForm = ({ totalPayment, productsQuantity, cartItems }) => {
     }
     setDeliveryFee(fee.toFixed(2)); // Format to 2 decimal places
   }, [deliveryOption, locationType]);
+
+  // Paystack configuration
+  const paystackConfig = {
+    reference: new Date().getTime().toString(), // unique reference
+    email: "user@example.com", // customer's email
+    amount: totalAmount * 100, // amount in kobo
+    publicKey: "YOUR_PAYSTACK_PUBLIC_KEY", // your Paystack public key
+    onSuccess: () => {
+      sendTransactionDetails();
+      setTransactionSent(true);
+    },
+    onClose: () => alert("Transaction was not completed, window closed."),
+  };
 
   return (
     <section className="checkout-personal-information">
@@ -159,7 +173,8 @@ const CheckoutForm = ({ totalPayment, productsQuantity, cartItems }) => {
             </section>
           )}
         </article>
-
+        <PaystackButton {...paystackConfig} />
+      
         {/* Button to send WhatsApp message */}
         <button
           type="button"
